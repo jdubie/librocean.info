@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <!-- This site was made in Vermont -->
+    <meta property="og:title" content="Come Study in the Librocean">
+    <meta property="og:type" content="landmark">
+    <meta property="og:url" content="http://librocean.info/">
+    <meta property="og:image" content="http://librocean.info/images/beach.jpg">
+    <meta property="og:site_name" content="Study in the Librocean">
+    <link href="http://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
+    <meta property="fb:admins" content="629190832">
+    <title>Welcome to the LIBROCEAN</title>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22955108-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <link href="style.css" media="all" rel="stylesheet" type="text/css" />
+  </head>
+
+  <style>
+    body {
+      background: url('<%- image %>') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    span.descriptor {
+      color: <%- color %>;
+    }
+  </style>
+  <body>
+
+    <%- yield %>
+
+    <div class="right">
+      <a href="whales" class="whales">
+        <p class="top">STUDY</p>
+        <p class="middle">WITH</p>
+        <p class="bottom">WHALES</p>
+      </a>
+
+      <br/><br/>
+
+      <a href="horses" class="horses">
+        <p class="top">Study</p>
+        <p class="middle">with</p>
+        <p class="bottom">horses</p>
+      </a>
+    </div>
+
+    <iframe src="http://www.facebook.com/plugins/like.php?href=http://librocean.info/&send=false&layout=standard&width=600&show_faces=true&action=like&colorscheme=light&font&height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:550px; height:105px;" allowtransparency="true"></iframe>
+
+    <h1>Come study in the</h1>
+    <h1 class="librocean">LIBROCEAN</h1>
+    <h3>Peaceful <span class="descriptor"><%- descriptor %></span> noise for a superior study environment.</h3>
+
+    <div id="player">
+    </div>
+
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: '<%- vid %>',
+          playerVars: { 'autoplay': 1 },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function onPlayerReady(event) {}
+
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+          event.target.playVideo();
+        }
+      }
+    </script>
+  </body>
+</html>
