@@ -1,19 +1,19 @@
 {
   "index": {
     "vid": "f77SKdyn-1Y",
-    "image": "http://www.islesurfboardsblog.com/home/wp-content/uploads/2013/04/Coronado-Barrel.jpg",
+    "image": "/img/ocean.jpg",
     "descriptor": "white",
     "color": "white"
   },
   "whales": {
     "vid": "savCAd6RyPI",
-    "image": "http://resources3.news.com.au/images/2009/08/22/1225765/134691-humpback-whales.jpg",
+    "image": "/img/whales.jpg",
     "descriptor": "whale",
     "color": "blue"
   },
   "horses": {
     "vid": "E3m-XH1Kij0",
-    "image": "http://hangout.altsounds.com/geek/gars/images/1/6/6/8/7/ss_only_the_horses_packshot_web.jpg",
+    "image": "/img/horses.jpg",
     "descriptor": "horse",
     "color": "brown"
   }
